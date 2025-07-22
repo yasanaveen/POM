@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT" verbose="0">
   <listeners>
     <listener class-name="utilities.ExtentReportManager"/>
   </listeners>
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="5" name="Test(failed)" verbose="0">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="testCases.TC_003LoginTest_DDT">
+      <class name="testCases.TC_002PimTest">
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="LogiTest_DDT" invocation-numbers="0 1 2 3"/>
+          <include name="PIMTest"/>
         </methods>
-      </class> <!-- testCases.TC_003LoginTest_DDT -->
+      </class> <!-- testCases.TC_002PimTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -14,18 +14,15 @@ public class OHRM_LogiPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	private @FindBy(name = "username") WebElement txt_username;
+	private @FindBy(xpath = "//input[@name='username']") WebElement txt_username;
 	private @FindBy(name = "password") WebElement txt_password;
 	private @FindBy(xpath = "//button[text()=' Login ']") WebElement btn_login;
 
 	// click on logout
 	private @FindBy(xpath = "//*[@class='oxd-userdropdown-tab']") WebElement btn_logout;
 	private @FindBy(xpath = "//*[text()='Logout']") WebElement clk_logout;
-	
-	
-	
-	private @FindBy(xpath = "(//*[@role='navigation']//img)[2]") WebElement validating_logo;
-	
+
+	private @FindBy(xpath = "//*[@class='oxd-navbar-nav']//img[@alt='client brand banner']") WebElement validating_logo;
 
 	public void setUsername(String username) {
 		txt_username.sendKeys(username);
@@ -34,20 +31,17 @@ public class OHRM_LogiPage {
 	public void setPassword(String pwd) throws InterruptedException {
 		txt_password.sendKeys(pwd);
 
-		Thread.sleep(3000);
-
 		btn_login.click();
 	}
-	
-	
-	public boolean logoValidation()
-	{
+
+	public boolean logoValidation() {
 		return validating_logo.isDisplayed();
 
 	}
 
 	public void clickLogout() throws InterruptedException {
 		btn_logout.click();
+
 		Thread.sleep(3000);
 
 		clk_logout.click();

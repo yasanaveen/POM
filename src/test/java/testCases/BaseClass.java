@@ -1,12 +1,16 @@
 package testCases;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -24,7 +28,7 @@ public class BaseClass {
 
 	@Parameters({ "browser" })
 	@BeforeClass
-	public void setUp(@Optional("chrome") String br) throws IOException {
+	public void setUp(@Optional("chrome") String br) throws IOException, InterruptedException {
 
 		FileInputStream file = new FileInputStream("src/test/resources/config.properties");
 		p = new Properties();
@@ -51,10 +55,21 @@ public class BaseClass {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
-		// driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-		driver.get(p.getProperty("appUrl"));
+		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		// Thread.sleep(3000);
+		// driver.get(p.getProperty("appUrl"));
+		// Thread.sleep(3000);
 		log.info("....URL is opened...");
 
+	}
+
+	public void captureScreen(WebDriver driver, String tname) throws IOException {
+
+		TakesScreenshot ts = (TakesScreenshot) driver;
+		File source = ts.getScreenshotAs(OutputType.FILE);
+		File tar = new File(System.getProperty("user.dir") + "/ScreenShots/" + tname + ".png");
+		FileUtils.copyFile(source, tar);
+		System.out.println("sceeen shot taken");
 	}
 
 	@AfterClass
