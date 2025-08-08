@@ -1,6 +1,8 @@
 package testCases;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
+
 import com.OHRMLoginPageObjects.HomePage_Objects;
 import com.OHRMLoginPageObjects.OHRM_LogiPage;
 
@@ -17,6 +19,8 @@ public class TC_002PimTest extends BaseClass {
 		log.info("password  entered..");
 		log.info("clicked on login button....");
 
+		// Assert.fail("Login failed");
+
 		HomePage_Objects hm = new HomePage_Objects(driver);
 		Thread.sleep(2000);
 		hm.clcikOn_pimBtn();
@@ -25,10 +29,11 @@ public class TC_002PimTest extends BaseClass {
 		Thread.sleep(2000);
 		hm.enterdetails("naveen", "yasa");
 
-		Thread.sleep(3000);
-		hm.clickLogout();
+		Thread.sleep(2000);
+		// hm.clickLogout();
+		lg.clickLogout();
 		log.info("clicked on logout...");
-		Thread.sleep(3000);
+		
 
 		log.info("Finished testcase...");
 

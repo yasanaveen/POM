@@ -1,3 +1,4 @@
+com\OHRMLoginPageObjects\ContactDetailsElemets.class
+com\OHRMLoginPageObjects\OHRM_LogiPage.class
 com\OHRMLoginPageObjects\HomePage_Objects.class
 pageObjectModel\pageObjectModel\App.class
-com\OHRMLoginPageObjects\OHRM_LogiPage.class

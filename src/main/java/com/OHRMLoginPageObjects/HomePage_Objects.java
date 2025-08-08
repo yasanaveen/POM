@@ -26,10 +26,14 @@ public class HomePage_Objects {
 	private @FindBy(name = "firstName") WebElement addEmp_firstName;
 	private @FindBy(name = "lastName") WebElement addEmp_lastname;
 	private @FindBy(xpath = "//*[text()=' Save ']") WebElement addEmp_btnSave;
+	
+	
+	
+	
 
 	// click on logout
-	private @FindBy(xpath = "//*[@class='oxd-userdropdown-tab']") WebElement btn_logout;
-	private @FindBy(xpath = "//*[text()='Logout']") WebElement clk_logout;
+//	private @FindBy(xpath = "//*[@class='oxd-userdropdown-tab']") WebElement btn_logout;
+//	private @FindBy(xpath = "//*[text()='Logout']") WebElement clk_logout;
 
 	
 	public void clcikOn_pimBtn() {
@@ -48,10 +52,10 @@ public class HomePage_Objects {
 		Thread.sleep(3000);
 	}
 
-	public void clickLogout() throws InterruptedException {
-		btn_logout.click();
-		Thread.sleep(3000);
-
-		clk_logout.click();
-	}
+//	public void clickLogout() throws InterruptedException {
+//		btn_logout.click();
+//		Thread.sleep(3000);
+//
+//		clk_logout.click();
+//	}
 }

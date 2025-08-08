@@ -15,6 +15,8 @@ public class TC_001LoginTest extends BaseClass {
 		log.info("Login page...");
 		OHRM_LogiPage lg = new OHRM_LogiPage(driver);
 
+		// URL validation
+
 		if (driver.getTitle().equals("OrangeHRM")) {
 			Assert.assertTrue(true);
 			log.info("Login page title is verified successfully...");
@@ -32,9 +34,18 @@ public class TC_001LoginTest extends BaseClass {
 
 		boolean loGo = lg.logoValidation();
 		log.info("checking logo is visible are not..");
-		//Assert.assertTrue(loGo, "Logo is not displayed at page...");
+		Assert.assertTrue(loGo, "Logo is not displayed at page...");
 		Assert.assertEquals(loGo, true, "Logo is not displayed at page...");
 		log.info("logo is displayed successfully...");
+
+//		if (loGo) {
+//			log.info("logo is displayed successfully...");
+//			Assert.assertTrue(true);
+//		} else {
+//			captureScreen(driver, "OHRM_loginpage");
+//			log.error("logo is not displayed at page...");
+//			Assert.fail("logo is not displayed at page...");
+//		}
 
 		lg.clickLogout();
 		log.info("click on logout...");

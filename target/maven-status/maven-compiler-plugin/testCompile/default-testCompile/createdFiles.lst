@@ -1,4 +1,7 @@
 testCases\BaseClass.class
-testCases\TC_001LoginTest.class
-testCases\TC_002PimTest.class
 utilities\ExtentReportManager.class
+testCases\TC_001LoginTest.class
+testCases\TC_003LoginTest_DDT.class
+utilities\DataProviders.class
+testCases\TC_002PimTest.class
+utilities\ExcelUtility.class

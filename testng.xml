@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
 <suite name="Suite">
 
 	<listeners>
@@ -10,8 +11,8 @@
 		<parameter name="browser" value="chrome" />
 		<classes>
 			<class name="testCases.TC_001LoginTest"/>
-			<!--<class name="testCases.TC_002PimTest" />
-			<class name="testCases.TC_003LoginTest_DDT"/>-->
+			<!--<class name="testCases.TC_002PimTest"/>-->
+			<!--<class name="testCases.TC_003LoginTest_DDT"/>-->
 		</classes>
 	</test>
 </suite>
